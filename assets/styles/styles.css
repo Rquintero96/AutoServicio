@@ -11,3 +11,7 @@ body{
         box-shadow: 0 10px 20px rgba(0, 0, 0, .19),
         0 6px 6px rgba(0, 0, 0, .23);
 }
+
+h3.textoSlider{
+	text-shadow: 2px 2px #101010;
+}
