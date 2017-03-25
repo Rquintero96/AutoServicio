@@ -42,15 +42,18 @@
         <center><img src="/images/signin.png" style="width:25%;height:25%; margin: auto;"></center>
         <form action="/sendinfo" method="POST">
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="text" id="usuario">
+            <input class="mdl-textfield__input" type="text" name="usuario" required>
             <label class="mdl-textfield__label" for="usuario">Usuario</label>
           </div>
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="password" id="contra">
+            <input class="mdl-textfield__input" type="password" name="contra" required>
             <label class="mdl-textfield__label" for="contra">Contraseña</label>
           </div>
           <center><input type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"  value="Inicia Sesión"></center>
         </form>
+        <% if(fallo) {%>
+          <div style="max-width: 300px; margin-left: auto; margin-right: auto; margin-top: 10px; border-radius: 25px; background-color: #fb8484; color: white"> <p align="center" style="padding: 5px;">No se ha encontrado este usuario, por favor intente nuevamente</p></div>
+        <% }%>
       </div>
 
     </div>

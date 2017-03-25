@@ -36,9 +36,9 @@ module.exports.routes = {
     view: 'homepage'
   },
   
-  '/login': {
-    view: 'login'
-  },
+  '/login': 'SqlserverController.verificar',
+  
+  '/logout': 'SqlserverController.logout',
 
   'POST /sendinfo': 'SqlserverController.login',
 
@@ -52,7 +52,8 @@ module.exports.routes = {
 
   '/registrocliente': {
     view: 'registrocliente'
-  }
+  },
+
 
   /***************************************************************************
   *                                                                          *

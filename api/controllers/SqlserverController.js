@@ -25,14 +25,41 @@ module.exports = {
 	},
 
 	login: function(req,res){
-		console.log("Hola");
-		console.log(req.body);
-		console.log(req.param('name'));
-		console.log(req.param('contra'));
+			u=req.param('usuario');
+			c=req.param('contra');
+			console.log(req.body);
+			Sqlserver.query('Select nombre from administrator where (usuario=\''+u+'\' and password=\''+c+'\')', 
+				function(err, results){
+					if (err) { return res.serverError(err); }
+					console.log(results);
+					console.log(results[0]);
+					if(results.length != 0){
+						req.session.me = results[0].nombre;
+						console.log(req.session.me);
+						return res.view('dashboard');
+					}
+					else{
+						req.session.me = null;
+						console.log(req.session.me);
+						res.view('login', {fallo: true});
+					}
+				});
+	    
+	},
 
-		return res.view('login');
+	logout: function(req,res){
+		req.session.me=null;
+		console.log(req.session.me);
+		res.view('homepage');
+	},
 
-
-
-	}
+	verificar: function (req, res){
+		if(req.session.me!=null){
+			console.log(req.session.me);
+			res.view('dashboard');
+		}
+		else{
+			res.view('login', {fallo: false});
+		}
+	},
 };
