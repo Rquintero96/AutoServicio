@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--META-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Este es el homepage de Auto Servicios 2016 C.A.">
+    <meta name="author" content="Reynaldo Quintero y Asher Kleiman">
+  <!--TITLE-->
+    <title>Auto Servicios 2016 C.A.</title>
+  <!--STYLES-->
+    <style>
+    </style>
+
+  <style>
+  .demo-card-wide.mdl-card {
+    width: 33%;
+    margin-right: 3px;
+  }
+  .demo-card-wide > .mdl-card__title {
+    color: #fff;
+    height: 400px;
+    
+  }
+  .demo-card-wide > .mdl-card__menu {
+    color: #fff;
+  }
+  </style>
+
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-red.min.css"> <!--Material Design-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <!--Material Design-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous"> <!--Bootstrap-->
+
+
+    
+</head>
+<body>
+<!-- Uses a header that scrolls with the text, rather than staying
+  locked at the top -->
+<div class="mdl-layout mdl-js-layout">
+  <header class="mdl-layout__header mdl-layout__header--scroll">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">Home</span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation -->
+      <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" href="/">Home</a>
+        <a class="mdl-navigation__link" href="">Dashboard</a>
+      </nav>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Home</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="">Home</a>
+      <a class="mdl-navigation__link" href="">Dashboard</a>
+    </nav>
+  </div>
+  <main class="mdl-layout__content">
+    <div class="page-content"><!-- Your content goes here -->
+      <div align="center">
+        <h1>El cliente no se encuentra registrado!</h1><br>
+        <p>A continuacion introduzca la informacion del cliente:</p>
+      </div>
+      <div align="center" style="width: 10%;">
+        <br>
+        <form method="GET">
+            <input class="mdl-textfield__input" type="text" id="nombre" placeholder="Nombre">
+            <label class="mdl-textfield__label" for="nombre">Nombre:</label>
+            <br>
+            <input class="mdl-textfield__input" type="text" id="cedula" placeholder="Cedula">
+            <label class="mdl-textfield__label" for="cedula">Cedula:</label>
+            <br>
+            <input class="mdl-textfield__input" type="text" id="telefono" placeholder="Telefono">
+            <label class="mdl-textfield__label" for="telefono">Telefono:</label>
+            <br>
+            <input class="mdl-textfield__input" type="text" id="direccion" placeholder="Direccion">
+            <label class="mdl-textfield__label" for="direccion">Direccion:</label>
+            <br>
+          <input class="mdl-button mdl-js-button mdl-button--raised" type="submit">
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
+
+
+<!-- SCRIPTS -->
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script> <!--Material Design-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> <!--JQuery-->
+
+</body>
+</html>

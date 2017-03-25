@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--META-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Este es el homepage de Auto Servicios 2016 C.A.">
+    <meta name="author" content="Reynaldo Quintero y Asher Kleiman">
+  <!--TITLE-->
+    <title>Auto Servicios 2016 C.A.</title>
+  <!--STYLES-->
+    <style>
+    </style>
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-red.min.css"> <!--Material Design-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <!--Material Design-->
+
+  <script>
+
+  </script>
+    
+</head>
+<body>
+<!-- Uses a header that scrolls with the text, rather than staying
+  locked at the top -->
+<div class="mdl-layout mdl-js-layout">
+  <header class="mdl-layout__header mdl-layout__header--scroll">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">Home</span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation -->
+      <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" href="/">Home</a>
+        <a class="mdl-navigation__link" href="">Dashboard</a>
+      </nav>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Home</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="">Home</a>
+      <a class="mdl-navigation__link" href="">Dashboard</a>
+    </nav>
+  </div>
+  <main class="mdl-layout__content">
+    <div class="page-content" align="center"><!-- Your content goes here -->
+    <!-- AQUI SE PIDE LA CEDULA Y SE ENVIA -->
+      <div align="center">
+        <h1>Bienvenido!</h1><br>
+        <p>A continuacion solo introduzca el numero de cedula asociado a su vehiculo para poder ver en que parte del proceso se encuentra.</p>
+      </div>
+      <div align="center" style="width: 10%;">
+        <br>
+        <form method="GET">
+          <input class="mdl-textfield__input" type="text" id="cedula" placeholder="Cedula">
+          <br>
+          <input class="mdl-button mdl-js-button mdl-button--raised" type="submit">
+        </form>
+      </div>
+      <br>
+      <br>
+
+    <!-- Apartir de aqui se genera la tabla correspondiente para el cliente -->
+      <div align="center" style="width: 80%;">
+      <%     var objetos = [{
+      marca: "chevrolet",
+      modelo: "colorado",
+      placa: "YBJ100",
+      estado: "Listo",
+      costo: "19000.00"
+    },
+    {
+      marca: "chevrolet",
+      modelo: "optra",
+      placa: "YBQ256",
+      estado: "En proceso",
+      costo: "19000.00"
+    }]; %>
+        <% if(objetos){ %> <!-- HAY QUE MODIFICAR EL 'objetos' y 'objeto' EN TODO EL CODIGO SIGUIENTE-->
+        <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+          <thead>
+            <tr><th>Marca</th><th>Modelo</th><th>Placa</th><th>Estado</th><th>Costo</th></tr>
+          </thead>
+
+          <% objetos.forEach( function (objeto){ %>
+          <tbody>
+            <tr><td><%= objeto.marca %></td><td><%= objeto.modelo %></td><td><%= objeto.placa %></td><td><%= objeto.estado %></td><td><% if(objeto.estado == "Listo"){ %><%= objeto.costo %><% }else{ %> -- <% }; %></td></tr>
+          </tbody>
+          <% }); %>
+        </table>
+        <% }; %>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </main>
+</div>
+
+
+<!-- SCRIPTS -->
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script> <!--Material Design-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> <!--JQuery-->
+
+</body>
+</html>

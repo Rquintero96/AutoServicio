@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--META-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Este es el homepage de Auto Servicios 2016 C.A.">
+    <meta name="author" content="Reynaldo Quintero y Asher Kleiman">
+  <!--TITLE-->
+    <title>Auto Servicios 2016 C.A.</title>
+  <!--STYLES-->
+    <style>
+    </style>
+
+  <style>
+  .demo-card-wide.mdl-card {
+    width: 33%;
+    margin-right: 3px;
+  }
+  .demo-card-wide > .mdl-card__title {
+    color: #fff;
+    height: 400px;
+    
+  }
+  .demo-card-wide > .mdl-card__menu {
+    color: #fff;
+  }
+  </style>
+
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-red.min.css"> <!--Material Design-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <!--Material Design-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous"> <!--Bootstrap-->
+
+
+    
+</head>
+<body>
+<!-- Uses a header that scrolls with the text, rather than staying
+  locked at the top -->
+<div class="mdl-layout mdl-js-layout">
+  <header class="mdl-layout__header mdl-layout__header--scroll">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">Home</span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation -->
+      <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" href="/">Home</a>
+        <a class="mdl-navigation__link" href="">Dashboard</a>
+      </nav>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Home</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="">Home</a>
+      <a class="mdl-navigation__link" href="">Dashboard</a>
+    </nav>
+  </div>
+  <main class="mdl-layout__content">
+    <div class="page-content"><!-- Your content goes here -->
+    <br>
+    <br>
+    <div class="row">
+<!--card1-->
+      <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+  <div class="mdl-card__title" style="background: url('/images/creafact.jpg') center / cover;">
+    <h2 class="mdl-card__title-text">Generacion de Factura</h2>
+  </div>
+  <div class="mdl-card__supporting-text">
+    Ingreso/Registro de clientes y automoviles para la generacion de la factura correspondiente.
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" onclick="creaFact();">
+      Crear factura.
+    </a>
+  </div>
+</div>
+<!--card2-->
+<div class="demo-card-wide mdl-card mdl-shadow--2dp">
+  <div class="mdl-card__title" style="background: url('/images/termfact.jpg') center / cover;">
+    <h2 class="mdl-card__title-text">Finalizacion de Factura</h2>
+  </div>
+  <div class="mdl-card__supporting-text">
+    Terminar una facturacion y terminar la realizacion del servicio al momento que el cliente quiera retirar su vehiculo.
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" onclick="termFact();">
+      Terminar factura.
+    </a>
+  </div>
+</div>
+<!--card3-->
+<div class="demo-card-wide mdl-card mdl-shadow--2dp">
+  <div class="mdl-card__title" style="background: url('/images/report.jpg') center / cover;">
+    <h2 class="mdl-card__title-text">Generacion de Reporte</h2>
+  </div>
+  <div class="mdl-card__supporting-text">
+    Ingreso/Registro de clientes y automoviles para la generacion de la factura correspondiente.
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+      Generar Reporte.
+    </a>
+  </div>
+</div>
+    </div>
+
+    </div>
+  </main>
+</div>
+
+
+<!-- SCRIPTS -->
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script> <!--Material Design-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> <!--JQuery-->
+  <script>
+    function creaFact() {
+    var ced = prompt("Introduzca el numero de cedula del cliente:");
+    //AQUI TIENE QUE IR EL CODIGO QUE REDIRECCIONE AL CONTROLADOR DE LA PROXIMA VISTA
+    }
+
+    function termFact() {
+    var ced = prompt("Introduzca el numero de cedula del cliente:");
+    //AQUI TIENE QUE IR EL CODIGO QUE REDIRECCIONE AL CONTROLADOR DE LA PROXIMA VISTA
+    }
+  </script>
+
+</body>
+</html>

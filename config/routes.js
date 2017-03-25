@@ -38,6 +38,18 @@ module.exports.routes = {
   
   '/login': {
     view: 'login'
+  },
+
+  '/dashboard': {
+    view: 'dashboard'
+  },
+
+  '/menu-admin': {
+    view: 'menu-admin'
+  },
+
+  '/registrocliente': {
+    view: 'registrocliente'
   }
 
   /***************************************************************************
