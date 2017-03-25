@@ -32,6 +32,14 @@ module.exports.connections = {
     adapter: 'sails-disk'
   },
 
+  sqlserver: {
+    adapter: 'sails-sqlserver',
+    user: 'datboi',
+    password: 'itsdatboiagain',
+    host: 'localhost',
+    database: 'AutoservicioDB'
+  }
+
   /***************************************************************************
   *                                                                          *
   * MySQL is the world's most popular relational database.                   *

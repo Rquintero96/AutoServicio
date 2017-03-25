@@ -29,4 +29,8 @@ module.exports.models = {
   ***************************************************************************/
   // migrate: 'alter'
 
+  
+    connection: 'sqlserver'
+  
+
 };
