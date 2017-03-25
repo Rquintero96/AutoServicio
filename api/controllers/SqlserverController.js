@@ -30,6 +30,8 @@ module.exports = {
 		console.log(req.param('name'));
 		console.log(req.param('contra'));
 
+		return res.view('login');
+
 
 
 	}
