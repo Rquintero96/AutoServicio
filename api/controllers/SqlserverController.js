@@ -18,5 +18,19 @@ module.exports = {
 	});
 
 	return res.view('dashboard', { objetos: obj});
+	},
+
+	busquedaVehiculo: function(req,res){
+
+	},
+
+	login: function(req,res){
+		console.log("Hola");
+		console.log(req.body);
+		console.log(req.param('name'));
+		console.log(req.param('contra'));
+
+
+
 	}
 };

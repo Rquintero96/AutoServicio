@@ -40,7 +40,11 @@ module.exports.routes = {
     view: 'login'
   },
 
-  '/dashboard': 'SqlserverController.Consulta',
+  'POST /login': 'SqlserverController.login',
+
+  '/dashboard': 'SqlserverController.consulta',
+
+  'POST /dashboard': 'SqlserverController.busquedaVehiculo',
 
   '/menu-admin': {
     view: 'menu-admin'
