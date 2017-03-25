@@ -65,20 +65,27 @@
         <h1>El cliente no se encuentra registrado!</h1><br>
         <p>A continuacion introduzca la informacion del cliente:</p>
       </div>
-      <div align="center" style="width: 10%;">
-        <br>
-        <form method="GET">
-            <input class="mdl-textfield__input" type="text" id="nombre" placeholder="Nombre">
-            <label class="mdl-textfield__label" for="nombre">Nombre:</label>
+      <div align="center">
+        <form method="POST">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="nombre">
+            <label class="mdl-textfield__label" for="nombre">Nombre</label>
+          </div>
+            
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="cedula">
+            <label class="mdl-textfield__label" for="cedula">Cedula</label>
+          </div>
             <br>
-            <input class="mdl-textfield__input" type="text" id="cedula" placeholder="Cedula">
-            <label class="mdl-textfield__label" for="cedula">Cedula:</label>
-            <br>
-            <input class="mdl-textfield__input" type="text" id="telefono" placeholder="Telefono">
-            <label class="mdl-textfield__label" for="telefono">Telefono:</label>
-            <br>
-            <input class="mdl-textfield__input" type="text" id="direccion" placeholder="Direccion">
-            <label class="mdl-textfield__label" for="direccion">Direccion:</label>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="telefono">
+            <label class="mdl-textfield__label" for="telefono">Telefono</label>
+          </div>
+            
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="direccion">
+            <label class="mdl-textfield__label" for="direccion">Direccion</label>
+          </div>
             <br>
           <input class="mdl-button mdl-js-button mdl-button--raised" type="submit">
         </form>
