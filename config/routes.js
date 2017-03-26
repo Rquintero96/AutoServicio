@@ -46,9 +46,7 @@ module.exports.routes = {
 
   'POST /dashboard': 'SqlserverController.busquedaVehiculo',
 
-  '/menu-admin': {
-    view: 'menu-admin'
-  },
+  '/menu-admin': 'SqlserverController.verificar2',
 
   'POST /crearfact': 'SqlserverController.busquedaCliente',
 
@@ -56,7 +54,13 @@ module.exports.routes = {
     view: 'registrocliente'
   },
 
-  'POST /registrar': 'SqlserverController.registrarCliente',
+  'POST /registrarcliente': 'SqlserverController.registrarCliente',
+
+  '/registrovehiculo': {
+    view: 'registrovehiculo'
+  },
+
+  'POST /registrarvehiculo': 'SqlserverController.registrarVehiculo'
 
 
   /***************************************************************************

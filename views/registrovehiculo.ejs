@@ -60,34 +60,45 @@
     </nav>
   </div>
   <main class="mdl-layout__content">
-    <div class="page-content" align="center"><!-- Your content goes here -->
-      <h1> Informacion de Facturacion </h1>
-      <br>
-      <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp" style="width: 30%;">
-      <tbody>
-        <tr><td class="mdl-data-table__cell--non-numeric">Nombre: </td><td> <%= data.nombre %> </td></tr>
-        <tr><td class="mdl-data-table__cell--non-numeric">Cedula: </td><td> <%= data.cedula %> </td></tr>
-        <tr><td class="mdl-data-table__cell--non-numeric">Telefono: </td><td> <%= data.numero %> </td></tr>
-        <tr><td class="mdl-data-table__cell--non-numeric">Direccion: </td><td> <%= data.direccion %> </td></tr>
-      </tbody>
-      </table>
-      <br>
-      <h2>Vehiculos registrados del cliente</h2>
-      <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp" style="width: 30%;">
-      <thead align="center">
-        <tr><th>Marca</th><th>Modelo</th><th>Año</th><th>Placa</th><th>Cilindrada</th><th></th></tr>
-      </thead>
-      <tbody>
-      <% if(data.vehiculos != null){ %>
-        <% data.vehiculos.forEach( function(vehiculo){ %>
-        <tr><td><%= vehiculo.marca %></td><td><%= vehiculo.modelo %></td><td><%= vehiculo.año %></td><td><%= vehiculo.placa %></td><td><%= vehiculo.cilindrada %></td><td><a>Seleccionar</a></td></tr>
-        <% }); %>
-        <% }; %>
-      </tbody>
-      </table>
-      <br>
+    <div class="page-content"><!-- Your content goes here -->
       <div align="center">
-        <a href="/registrovehiculo"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Añadir Vehiculo</button></a>
+        <h1>Registro de Vehiculo</h1><br>
+        <p>A continuacion introduzca la informacion del vehiculo:</p>
+      </div>
+      <div align="center">
+        <form action='/registrarvehiculo' method="POST">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" name="tipo">
+            <label class="mdl-textfield__label" for="tipo">Tipo</label>
+          </div>
+            
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" name="marca">
+            <label class="mdl-textfield__label" for="marca">Marca</label>
+          </div>
+            <br>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" name="modelo">
+            <label class="mdl-textfield__label" for="modelo">Modelo</label>
+          </div>
+            
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" name="año">
+            <label class="mdl-textfield__label" for="año">Año</label>
+          </div>
+            <br>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" name="placa">
+            <label class="mdl-textfield__label" for="placa">Placa</label>
+          </div>
+            
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" name="cilindrada">
+            <label class="mdl-textfield__label" for="cilindrada">Cilindrada</label>
+          </div>
+            <br>
+          <input class="mdl-button mdl-js-button mdl-button--raised" type="submit">
+        </form>
       </div>
     </div>
   </main>
@@ -97,7 +108,6 @@
 <!-- SCRIPTS -->
   <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script> <!--Material Design-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> <!--JQuery-->
-
 
 </body>
 </html>
