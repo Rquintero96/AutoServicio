@@ -141,16 +141,18 @@ module.exports = {
 							cliente[0].vehiculos = vehiculos;
 
 							res.view('visualcliente', {data: cliente[0]});
-						});
-				
-					
+						});		
 				});
 			}
 		});
+	},
 
+	servicios: function(req,res){
+		console.log("funciona");
+		console.log(req.param('placa'));
 
-
-
-
+		Sqlserver.query('USE AutoservicioDB; SELECT * from servicios;', function(err, result){
+			req.session.servicios = result;
+		});
 	}
 };

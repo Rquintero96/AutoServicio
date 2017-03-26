@@ -73,14 +73,14 @@
       </table>
       <br>
       <h2>Vehiculos registrados del cliente</h2>
-      <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp" style="width: 30%;">
+      <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" id="table" style="width: 30%;">
       <thead align="center">
         <tr><th>Marca</th><th>Modelo</th><th>Año</th><th>Placa</th><th>Cilindrada</th><th></th></tr>
       </thead>
       <tbody>
       <% if(data.vehiculos != null){ %>
         <% data.vehiculos.forEach( function(vehiculo){ %>
-        <tr><td><%= vehiculo.marca %></td><td><%= vehiculo.modelo %></td><td><%= vehiculo.año %></td><td><%= vehiculo.placa %></td><td><%= vehiculo.cilindrada %></td><td><a>Seleccionar</a></td></tr>
+        <tr><td><%= vehiculo.marca %></td><td><%= vehiculo.modelo %></td><td><%= vehiculo.año %></td><td><%= vehiculo.placa %></td><td><%= vehiculo.cilindrada %></td></tr> 
         <% }); %>
         <% }; %>
       </tbody>
@@ -97,6 +97,17 @@
 <!-- SCRIPTS -->
   <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script> <!--Material Design-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> <!--JQuery-->
+  <script>
+    $("#table tr").click(function(){
+      $(this).addClass('selected').siblings().removeClass('selected');    
+      var value=$(this).find('td:nth-child(4)').html();
+      
+      $.post("/servicios", {placa: value}, function(result){
+        window.location = 'menu-admin';
+      });
+      
+    });
+  </script>
 
 
 </body>

@@ -60,7 +60,9 @@ module.exports.routes = {
     view: 'registrovehiculo'
   },
 
-  'POST /registrarvehiculo': 'SqlserverController.registrarVehiculo'
+  'POST /registrarvehiculo': 'SqlserverController.registrarVehiculo',
+
+  'POST /servicios': 'SqlserverController.servicios'
 
 
   /***************************************************************************
