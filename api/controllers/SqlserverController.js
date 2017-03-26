@@ -6,22 +6,14 @@
  */
 
 module.exports = {
-	consulta: function(req, res){
 
-	var obj;
 
-	Sqlserver.query('SELECT nombre FROM cliente;', function(err, results){
-		if(err) return res.serverError(err);
 
-		obj = results;
-		console.log(results);
-	});
-
-	return res.view('dashboard', { objetos: obj});
-	},
 
 	busquedaVehiculo: function(req,res){
+		var ced= req.param('cedula');
 
+		res.view('dashboard');
 	},
 
 	login: function(req,res){
@@ -62,4 +54,43 @@ module.exports = {
 			res.view('login', {fallo: false});
 		}
 	},
+
+	busquedaCliente: function(req,res){
+		var ced = req.param('cedula');
+		console.log(ced);
+
+		Sqlserver.query('USE AutoservicioDB; SELECT id, nombre, cedula, numero, direccion FROM cliente where cedula=\''+ced+'\';', function(err, cliente){
+			console.log(cliente);
+			if(cliente[0].id==null){
+				res.view('registrocliente');
+			}else{
+
+				Sqlserver.query('USE AutoservicioDB; Select vehiculo.marca, vehiculo.modelo, vehiculo.año, vehiculo.placa, vehiculo.cilindrada from vehiculo inner join vehiculoCliente on vehiculoCliente.idVehiculo = vehiculo.id where '+cliente[0].id+' = vehiculoCliente.idCliente;', function(err, vehiculos){
+
+					cliente[0].vehiculos = vehiculos;
+					console.log(vehiculos);
+					console.log(cliente[0]);
+					res.view('visualcliente', {data: cliente[0]});
+				});
+				
+			}
+		});
+	},
+
+	registrarCliente: function(req,res){
+		var nombre = req.param('nombre');
+		var cedula = req.param('cedula');
+		var direccion = req.param('direccion');
+		var numero = req.param('numero');
+		var cliente = {
+			nombre: nombre,
+			cedula: cedula,
+			direccion: direccion,
+			numero: numero
+		};
+
+		Sqlserver.query('INSERT INTO cliente VALUES (\''+nombre+'\',\''+cedula+'\',\''+numero+'\',\''+direccion+'\');', function(err, info){
+			res.view('visualCliente', cliente);
+		});
+	}
 };

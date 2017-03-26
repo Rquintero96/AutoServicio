@@ -60,7 +60,7 @@
     </nav>
   </div>
   <main class="mdl-layout__content">
-    <div class="page-content"><!-- Your content goes here -->
+    <div class="page-content" align="center"><!-- Your content goes here -->
     <br>
     <br>
     <div class="row">
@@ -107,6 +107,10 @@
   </div>
 </div>
     </div>
+    <br>
+    <div id="divdir" style="width: 30%;" align="center">
+
+    </div>
 
     </div>
   </main>
@@ -118,13 +122,15 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> <!--JQuery-->
   <script>
     function creaFact() {
-    var ced = prompt("Introduzca el numero de cedula del cliente:");
-    //AQUI TIENE QUE IR EL CODIGO QUE REDIRECCIONE AL CONTROLADOR DE LA PROXIMA VISTA
+      $("#divdir").empty();
+      var newForm = $('<p>Introduzca el numero de cedula del cliente:</p><br><br><form action="/crearfact" method="POST"><input class="mdl-textfield__input" type="text" name="cedula" placeholder="Cedula"><br><input class="mdl-button mdl-js-button mdl-button--raised" type="submit"></form>');
+      $("#divdir").append(newForm);
     }
 
     function termFact() {
-    var ced = prompt("Introduzca el numero de cedula del cliente:");
-    //AQUI TIENE QUE IR EL CODIGO QUE REDIRECCIONE AL CONTROLADOR DE LA PROXIMA VISTA
+      $("#divdir").empty();
+      var newForm = $('<p>Introduzca el numero de cedula del cliente:</p><br><br><form action="/termfact" method="POST"><input class="mdl-textfield__input" type="text" name="cedula" placeholder="Cedula"><br><input class="mdl-button mdl-js-button mdl-button--raised" type="submit"></form>');
+      $("#divdir").append(newForm);
     }
   </script>
 

@@ -42,7 +42,7 @@ module.exports.routes = {
 
   'POST /sendinfo': 'SqlserverController.login',
 
-  '/dashboard': 'SqlserverController.consulta',
+  '/dashboard': 'SqlserverController.busquedaVehiculo',
 
   'POST /dashboard': 'SqlserverController.busquedaVehiculo',
 
@@ -50,9 +50,13 @@ module.exports.routes = {
     view: 'menu-admin'
   },
 
+  'POST /crearfact': 'SqlserverController.busquedaCliente',
+
   '/registrocliente': {
     view: 'registrocliente'
   },
+
+  'POST /registrar': 'SqlserverController.registrarCliente',
 
 
   /***************************************************************************
