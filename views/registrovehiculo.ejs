@@ -48,15 +48,15 @@
       <!-- Navigation -->
       <nav class="mdl-navigation">
         <a class="mdl-navigation__link" href="/">Home</a>
-        <a class="mdl-navigation__link" href="">Dashboard</a>
+        <a class="mdl-navigation__link" href="/dashboard">Dashboard</a>
       </nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
     <span class="mdl-layout-title">Home</span>
     <nav class="mdl-navigation">
-      <a class="mdl-navigation__link" href="">Home</a>
-      <a class="mdl-navigation__link" href="">Dashboard</a>
+      <a class="mdl-navigation__link" href="/">Home</a>
+      <a class="mdl-navigation__link" href="/dashboard">Dashboard</a>
     </nav>
   </div>
   <main class="mdl-layout__content">
@@ -68,38 +68,41 @@
       <div align="center">
         <form action='/registrarvehiculo' method="POST">
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="text" name="tipo">
+            <input class="mdl-textfield__input" type="text" name="tipo" required>
             <label class="mdl-textfield__label" for="tipo">Tipo</label>
           </div>
             
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="text" name="marca">
+            <input class="mdl-textfield__input" type="text" name="marca" required>
             <label class="mdl-textfield__label" for="marca">Marca</label>
           </div>
             <br>
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="text" name="modelo">
+            <input class="mdl-textfield__input" type="text" name="modelo" required>
             <label class="mdl-textfield__label" for="modelo">Modelo</label>
           </div>
             
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="text" name="año">
+            <input class="mdl-textfield__input" type="text" name="año" required>
             <label class="mdl-textfield__label" for="año">Año</label>
           </div>
             <br>
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="text" name="placa">
+            <input class="mdl-textfield__input" type="text" name="placa" required>
             <label class="mdl-textfield__label" for="placa">Placa</label>
           </div>
             
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="text" name="cilindrada">
+            <input class="mdl-textfield__input" type="text" name="cilindrada" required>
             <label class="mdl-textfield__label" for="cilindrada">Cilindrada</label>
           </div>
             <br>
           <input class="mdl-button mdl-js-button mdl-button--raised" type="submit">
         </form>
       </div>
+      <br>
+      <br>
+      <a href="/menu-admin"><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">Volver</button></a>
     </div>
   </main>
 </div>

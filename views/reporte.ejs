@@ -50,15 +50,15 @@
       <!-- Navigation -->
       <nav class="mdl-navigation">
         <a class="mdl-navigation__link" href="/">Home</a>
-        <a class="mdl-navigation__link" href="">Dashboard</a>
+        <a class="mdl-navigation__link" href="/dashboard">Dashboard</a>
       </nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
     <span class="mdl-layout-title">Reporte</span>
     <nav class="mdl-navigation">
-      <a class="mdl-navigation__link" href="">Home</a>
-      <a class="mdl-navigation__link" href="">Dashboard</a>
+      <a class="mdl-navigation__link" href="/">Home</a>
+      <a class="mdl-navigation__link" href="/dashboard">Dashboard</a>
     </nav>
   </div>
   <main class="mdl-layout__content">
@@ -79,6 +79,11 @@
             <h3 style="color: rgb(63,81,181); font-weight: bold;" align="center">¿Cuál es el servicio que más se ha llevado a cabo?</h3>
             <p align="left" style="font-size: 150%;"> <span style="color: rgb(244,67,54);">Respuesta:</span> <%= data[1][0].nombre %>, que ha sido realizado <%= data[1][0].cantidad %> veces</p>
           </div>
+    </div>
+    </div>
+    <br>
+    <br>
+    <a href="/menu-admin"><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">Volver</button></a>
     </div>
   </main>
 </div>

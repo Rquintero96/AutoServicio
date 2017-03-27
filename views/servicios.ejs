@@ -48,15 +48,15 @@
       <!-- Navigation -->
       <nav class="mdl-navigation">
         <a class="mdl-navigation__link" href="/">Home</a>
-        <a class="mdl-navigation__link" href="">Dashboard</a>
+        <a class="mdl-navigation__link" href="/dashboard">Dashboard</a>
       </nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
     <span class="mdl-layout-title">Home</span>
     <nav class="mdl-navigation">
-      <a class="mdl-navigation__link" href="">Home</a>
-      <a class="mdl-navigation__link" href="">Dashboard</a>
+      <a class="mdl-navigation__link" href="/">Home</a>
+      <a class="mdl-navigation__link" href="/dashboard">Dashboard</a>
     </nav>
   </div>
   <main class="mdl-layout__content">
@@ -81,7 +81,7 @@
       <p>Indique el ID del servicio que desea realizar:</p>
         <form action="/agregarservicio" method="POST">
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="text" name="servicio">
+            <input class="mdl-textfield__input" type="text" name="servicio" required>
             <label class="mdl-textfield__label" for="servicio">Servicio</label>
           </div>
             <br>
@@ -94,7 +94,9 @@
       <div align="center">
         <a href="/menu-admin"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Finalizar</button></a>
       </div>
-
+      <br>
+      <br>
+      <a href="/menu-admin"><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">Volver</button></a>
     </div>
   </main>
 </div>

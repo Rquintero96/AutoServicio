@@ -48,15 +48,15 @@
       <!-- Navigation -->
       <nav class="mdl-navigation">
         <a class="mdl-navigation__link" href="/">Home</a>
-        <a class="mdl-navigation__link" href="">Dashboard</a>
+        <a class="mdl-navigation__link" href="/dashboard">Dashboard</a>
       </nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
     <span class="mdl-layout-title">Home</span>
     <nav class="mdl-navigation">
-      <a class="mdl-navigation__link" href="">Home</a>
-      <a class="mdl-navigation__link" href="">Dashboard</a>
+      <a class="mdl-navigation__link" href="/">Home</a>
+      <a class="mdl-navigation__link" href="/dashboard">Dashboard</a>
     </nav>
   </div>
   <main class="mdl-layout__content">
@@ -68,21 +68,21 @@
       <div align="center">
         <form action='/registrarcliente' method="POST">
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="text" name="nombre">
+            <input class="mdl-textfield__input" type="text" name="nombre" required>
             <label class="mdl-textfield__label" for="nombre">Nombre</label>
           </div>
             
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="text" name="cedula" value="<%= cedula %>">
+            <input class="mdl-textfield__input" type="text" name="cedula" value="<%= cedula %>" required>
             <label class="mdl-textfield__label" for="cedula">Cedula</label>
           </div>
             <br>
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" required>
             <input class="mdl-textfield__input" type="text" name="telefono">
             <label class="mdl-textfield__label" for="telefono">Telefono</label>
           </div>
             
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" required>
             <input class="mdl-textfield__input" type="text" name="direccion">
             <label class="mdl-textfield__label" for="direccion">Direccion</label>
           </div>
@@ -90,6 +90,9 @@
           <input class="mdl-button mdl-js-button mdl-button--raised" type="submit">
         </form>
       </div>
+      <br>
+      <br>
+      <a href="/menu-admin"><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">Volver</button></a>
     </div>
   </main>
 </div>
