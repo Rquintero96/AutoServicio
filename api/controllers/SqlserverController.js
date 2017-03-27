@@ -148,11 +148,32 @@ module.exports = {
 	},
 
 	servicios: function(req,res){
-		console.log("funciona");
-		console.log(req.param('placa'));
+		var placa = req.param('placa');
 
-		Sqlserver.query('USE AutoservicioDB; SELECT * from servicios;', function(err, result){
-			req.session.servicios = result;
+		console.log(placa+' '+req.session.cliente);
+
+		Sqlserver.query('USE AutoservicioDB; SELECT cliente.id from cliente inner join vehiculoCliente on vehiculoCliente.idCliente = cliente.id inner join vehiculo on vehiculoCliente.idVehiculo = vehiculo.id where vehiculo.placa = \''+placa+'\' and cliente.id= '+req.session.cliente+' ;',function(err,resp){
+			console.log(err);
+			console.log(resp);
+			if(resp.length != 0){
+				Sqlserver.query('USE AutoservicioDB; SELECT * from servicio;', function(err, result){
+					console.log(result);
+					result[0].placa=placa;
+					console.log(result);
+	
+					res.view('servicios',{data: result});
+				});
+			}else{
+				res.view('menu-admin');
+			}	
 		});
+	},
+
+	agregarservicio: function(req,res){
+		
+		var placa = req.param('placa');
+		var serv = req.param('servicio');
+		console.log('placa');
+		console.log('serv');
 	}
 };
