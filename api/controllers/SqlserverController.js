@@ -13,7 +13,12 @@ module.exports = {
 	busquedaVehiculo: function(req,res){
 		var ced= req.param('cedula');
 
-		res.view('dashboard');
+		Sqlserver.query('use AutoservicioDB; select factura.id, vehiculo.marca, vehiculo.modelo, vehiculo.placa, factura.estado , factura.total from vehiculo inner join factura on factura.idVehiculo=vehiculo.id inner join vehiculoCliente on vehiculoCliente.idVehiculo=vehiculo.id inner join cliente on vehiculoCliente.idCliente = cliente.id where cliente.cedula = \''+ced+'\'', function(err, facturas){
+			console.log(facturas);
+
+			res.view('dashboard',{objetos: facturas});
+		});
+			
 	},
 
 	login: function(req,res){
@@ -88,6 +93,33 @@ module.exports = {
 		});
 	},
 
+	busquedaClienteFactura: function(req,res){
+		var ced = req.param('cedula');
+
+		Sqlserver.query('use AutoservicioDB; select factura.id, vehiculo.marca, vehiculo.modelo, vehiculo.placa, factura.pago, factura.estado, factura.total from vehiculo inner join factura on factura.idVehiculo=vehiculo.id inner join vehiculoCliente on vehiculoCliente.idVehiculo=vehiculo.id inner join cliente on vehiculoCliente.idCliente = cliente.id where cliente.cedula = \''+ced+'\'', function(err, results){
+			req.session.cliente2 = ced;
+			res.view('facturacion', {objetos: results});
+		});
+	},
+
+	finalizarfactura: function(req,res){
+		var ced = req.session.cliente2;
+		var idfact = req.param('id');
+
+		Sqlserver.query('USE AutoservicioDB; select vehiculoServicio.id from vehiculoServicio inner join factura on factura.idVehiculo = vehiculoServicio.idVehiculo where factura.id=\''+idfact+'\'', function(err, servicios){
+			servicios.forEach( function(servicio){
+				Sqlserver.query('USE AutoservicioDB; UPDATE vehiculoServicio SET estatus = 1 WHERE id='+servicio.id+'', function(err, respuesta){
+
+				})
+			});
+
+			Sqlserver.query('USE AutoservicioDB; UPDATE factura SET estado=1 WHERE factura.id='+idfact+'', function(err, respuestaa){
+
+			});
+			res.view('menu-admin');
+		});
+	},
+
 	registrarCliente: function(req,res){
 		var nombre = req.param('nombre');
 		var cedula = req.param('cedula');
@@ -123,7 +155,7 @@ module.exports = {
 		console.log(cilindrada);
 		console.log(req.session.cliente);
 
-		var tipo = typeof req.session.cliente;
+		var tipe = typeof req.session.cliente;
 		console.log(tipo);
 
 
@@ -173,8 +205,16 @@ module.exports = {
 		
 		var placa = req.param('placa');
 		var serv = req.param('servicio');
-		console.log('placa');
-		console.log('serv');
+		console.log(placa);
+		console.log(serv);
+
+		Sqlserver.query('Use AutoservicioDB; Select nombre from servicio where servicio.id='+serv+';', function(err, servicio){
+			console.log(servicio);
+
+			Sqlserver.query('USE AutoservicioDB; Execute insertaServicioVehiculo \''+placa+'\', \''+servicio[0].nombre+'\';', function(err, result){
+				return 0;
+			});
+		});
 	},
 
 	reporte: function(req,res){

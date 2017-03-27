@@ -77,6 +77,20 @@
       </tbody>
       </table>
       <br>
+      <div>
+      <p>Indique el ID del servicio que desea realizar:</p>
+        <form action="/agregarservicio" method="POST">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" name="servicio">
+            <label class="mdl-textfield__label" for="servicio">Servicio</label>
+          </div>
+            <br>
+          <input type="hidden" name="placa" id="objeto" value="<%= data[0].placa %>">
+          <input class="mdl-button mdl-js-button mdl-button--raised" type="submit" value="Agregar Servicios">
+        </form>
+      </div>
+
+      <br>
       <div align="center">
         <a href="/menu-admin"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Finalizar</button></a>
       </div>

@@ -49,12 +49,12 @@
     <!-- AQUI SE PIDE LA CEDULA Y SE ENVIA -->
       <div align="center">
         <h1>Bienvenido!</h1><br>
-        <p>A continuacion solo introduzca el numero de cedula asociado a su vehiculo para poder ver en que parte del proceso se encuentra.</p>
+        <p>A continuacion introduzca el numero de ID de la factura a finalizar.</p>
       </div>
       <div align="center" style="width: 10%;">
         <br>
-        <form action="" method="POST">
-          <input class="mdl-textfield__input" type="text" name="cedula" placeholder="Cedula">
+        <form action="/finalizarfact" method="POST">
+          <input class="mdl-textfield__input" type="text" name="id" placeholder="ID">
           <br>
           <input class="mdl-button mdl-js-button mdl-button--raised" type="submit">
         </form>
@@ -68,12 +68,11 @@
         <% try{ %> <!-- HAY QUE MODIFICAR EL 'objetos' y 'objeto' EN TODO EL CODIGO SIGUIENTE-->
         <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
           <thead>
-            <tr><th>Marca</th><th>Modelo</th><th>Placa</th><th>Estado</th><th>Costo</th></tr>
+            <tr><th>ID</th><th>Marca</th><th>Modelo</th><th>Placa</th><th>Estado</th><th>Costo</th></tr>
           </thead>
-
           <% objetos.forEach( function (objeto){ %>
           <tbody>
-            <tr><td><%= objeto.marca %></td><td><%= objeto.modelo %></td><td><%= objeto.placa %></td><td><% if(objeto.estado){ %> Listo <% }else{ %> En Servicio <% }; %></td><td><% if(objeto.estado == 1){ %><%= objeto.total %><% }else{ %> -- <% }; %></td></tr>
+            <tr><td><%= objeto.id %></td><td><%= objeto.marca %></td><td><%= objeto.modelo %></td><td><%= objeto.placa %></td><td><% if(objeto.pago){ %> Pagado <% }else if(!objeto.estado){ %> En Servicio <% }else{ %> En Espera <% }; %></td><td><% if(objeto.estado == 1){ %><%= objeto.total %><% }else{ %> -- <% }; %></td></tr>
           </tbody>
           <% }); %>
         </table>

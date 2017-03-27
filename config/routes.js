@@ -50,6 +50,10 @@ module.exports.routes = {
 
   'POST /crearfact': 'SqlserverController.busquedaCliente',
 
+  'POST /termfact': 'SqlserverController.busquedaClienteFactura',
+
+  'POST /finalizarfact': 'SqlserverController.finalizarfactura',
+
   '/registrocliente': {
     view: 'registrocliente'
   },
