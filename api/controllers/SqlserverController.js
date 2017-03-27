@@ -175,5 +175,21 @@ module.exports = {
 		var serv = req.param('servicio');
 		console.log('placa');
 		console.log('serv');
-	}
+	},
+
+	reporte: function(req,res){
+			var resultados= new Array(3);
+			Sqlserver.query('Use AutoservicioDB; Select TOP 1 count(*) as cantidad, modelo from vehiculo group by modelo order by cantidad desc;', function(err, modelo){
+				console.log(resultados);
+				resultados[0]=modelo;
+				Sqlserver.query('Use AutoservicioDB; Select TOP 1 count(*) as cantidad, servicio.nombre from vehiculoServicio inner join servicio on vehiculoServicio.idServicio=servicio.id group by servicio.nombre order by cantidad desc;', function(err, servicio){
+					resultados[1]=servicio;
+					Sqlserver.query('Use AutoservicioDB; Select count(idServicio)*costo as ingreso, nombre from vehiculoServicio inner join servicio on vehiculoServicio.idServicio=servicio.id group by nombre, costo;',function(err, result){
+						resultados[2]=result;
+						console.log(resultados);
+						res.view('reporte', {data: resultados});
+					});
+				});
+			});
+		},
 };

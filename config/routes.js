@@ -64,7 +64,9 @@ module.exports.routes = {
 
   'POST /servicios': 'SqlserverController.servicios',
 
-  'POST /agregarservicio': 'SqlserverController.agregarservicio'
+  'POST /agregarservicio': 'SqlserverController.agregarservicio',
+
+  '/reporte': 'SqlserverController.reporte'
 
 
   /***************************************************************************
